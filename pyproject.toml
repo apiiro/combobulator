@@ -1,0 +1,7 @@
+[build-system]
+requires = [
+    "gql",
+    "python-dotenv",
+    "argparse",
+]
+build-backend = "setuptools"

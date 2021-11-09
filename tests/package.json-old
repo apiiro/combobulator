@@ -1,0 +1,68 @@
+{
+	"name": "chalk",
+	"version": "4.1.0",
+	"description": "Terminal string styling done right",
+	"license": "MIT",
+	"repository": "chalk/chalk",
+	"funding": "https://github.com/chalk/chalk?sponsor=1",
+	"type": "module",
+	"exports": "./source/index.js",
+	"engines": {
+		"node": ">=12.17"
+	},
+	"scripts": {
+		"test": "xo && nyc ava && tsd",
+		"bench": "matcha benchmark.js"
+	},
+	"files": [
+		"source",
+		"!source/index.test-d.ts"
+	],
+	"keywords": [
+		"color",
+		"colour",
+		"colors",
+		"terminal",
+		"console",
+		"cli",
+		"string",
+		"str",
+		"ansi",
+		"style",
+		"styles",
+		"tty",
+		"formatting",
+		"rgb",
+		"256",
+		"shell",
+		"xterm",
+		"log",
+		"logging",
+		"command-line",
+		"text"
+	],
+	"artifactId": {
+		"ansi-styles": "^6.1.0",
+		"supports-color": "^9.0.2"
+	},
+	"devartifactId": {
+		"ava": "^3.15.0",
+		"color-convert": "^2.0.1",
+		"coveralls": "^3.1.1",
+		"execa": "^5.1.1",
+		"log-update": "^4.0.0",
+		"matcha": "^0.7.0",
+		"nyc": "^15.1.0",
+		"tsd": "^0.17.0",
+		"typescript": "^4.3.5",
+		"xo": "^0.42.0",
+		"yoctodelay": "^1.2.0"
+	},
+	"types": "./source/index.d.ts",
+	"xo": {
+		"rules": {
+			"unicorn/prefer-string-slice": "off",
+			"unicorn/better-regex": "off"
+		}
+	}
+}
