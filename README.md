@@ -23,6 +23,10 @@ The project is putting practicionar's ability to extend and fit the toolkit to h
 
 Dependency Combobulator is ready to work with as it is - just `git clone` or download the package from https://github.com/apiiro/combobulator
 
+Make sure to install required dependencies by running:
+
+`python3 -m pip install python-dotenv gql argparse`
+
 ## Arguments (--help)
 ```
   -h, --help            show this help message and exit
