@@ -42,22 +42,3 @@ def recv_pkg_info(pkgs, url=REGISTRY_URL):
     return names
 
 # TODO add a source scan for pypi alternatives
-"""
-def scan_source(dir):
-    try:
-        path = dir + "./pom.xml"
-        tree = ET.parse(path)
-        pom = tree.getroot()
-        ns = ".//{http://maven.apache.org/POM/4.0.0}"
-        lister = []
-        for dependencies in pom.findall(ns + 'dependencies'):
-            for dependency in dependencies.findall(ns + 'dependency'):
-                group = dependency.find(ns + 'groupId').text
-                artifact = dependency.find(ns + 'artifactId').text
-                lister.append(group + ':' + artifact)
-            # print(lister)
-        return lister
-    except:
-        print("[ERR] Couldn't import from given path.")
-        exit(1)
-"""
