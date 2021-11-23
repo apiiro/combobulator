@@ -25,7 +25,7 @@ Dependency Combobulator is ready to work with as it is - just `git clone` or dow
 
 Make sure to install required dependencies by running:
 
-`python3 -m pip install python-dotenv gql argparse`
+`pip install -r requirements.txt`
 
 ## Arguments (--help)
 ```
