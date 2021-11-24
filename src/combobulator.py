@@ -6,13 +6,14 @@ from dotenv import load_dotenv
 from metapackage import MetaPackage as metapkg
 import registry.npm as npm
 import registry.maven as maven
+import registry.pypi as pypi
 from analysis import heuristics as heur
 
 # export
 import csv
 import sys
 
-SUPPORTED_PACKAGES=['npm', 'NuGet', 'maven']
+SUPPORTED_PACKAGES=['npm', 'pypi', 'maven']
 LEVELS = ['compare', "comp", 'heuristics', "heur"]
 
 def init_args():
@@ -28,7 +29,7 @@ def parse_args():
         add_help=True)
     parser.add_argument("-t", "--type",
                         dest="package_type",
-                        help="Package Manager Type, i.e: npm, NuGet, maven",
+                        help="Package Manager Type, i.e: npm, PyPI, maven",
                         action="store",type=str, choices=SUPPORTED_PACKAGES,
                         required=True )
     # https://docs.python.org/3/library/argparse.html#mutual-exclusion
@@ -94,6 +95,7 @@ def scan_source(pkgtype, dir):
         return npm.scan_source(dir)
     elif pkgtype == "maven":
         return maven.scan_source(dir)
+    #TODO: add pypi scanner
     else:
         print("[ERROR]  Selected package type doesn't support import scan.")
         sys.exit(1)
@@ -107,6 +109,8 @@ def check_against(check_type, check_list):
     elif check_type == "maven":
         response = maven.recv_pkg_info(check_list)
         return response
+    elif check_type == "pypi":
+        response = pypi.recv_pkg_info(check_list)
 
 def export_csv(instances, path):
     #filer = open(path, 'w', newline='')
@@ -170,6 +174,9 @@ def main():
     if args.package_type == 'maven':
         for x in pkglist: # format orgId:packageId
             metapkg(x.split(':')[1], args.package_type, x.split(':')[0])
+    if args.package_type == 'pypi':
+        for x in pkglist:
+            metapkg(x, args.package_type)
 
     # QUERY & POPULATE
     check_against(args.package_type, metapkg.instances)
