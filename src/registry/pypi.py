@@ -1,7 +1,6 @@
 import json
 import requests
 from datetime import datetime as dt
-#import xml.etree.ElementTree as ET
 
 # classic api - https://pypi.org/pypi/<package-name>/json
 REGISTRY_URL = "https://pypi.org/pypi/"
