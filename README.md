@@ -3,7 +3,7 @@
 
 Dependency Combobulator is an Open-Source, modular and extensible framework to detect and prevent dependency confusion leakage and potential attacks. This facilitates a holistic approach for ensuring secure application releases that can be evaluated against different sources (e.g., GitHub Packages, JFrog Artifactory) and many package management schemes (e.g., ndm, maven).
 
-### Intendend Audiances
+### Intended Audiances
 
 The framework can be used by security auditors, pentesters and even baked into an enterprise's application security program and release cycle in an automated fashion.
 ### Main features
