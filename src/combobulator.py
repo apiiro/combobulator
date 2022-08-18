@@ -145,7 +145,6 @@ def export_json(instances, path):
     print(data)
     try:
         with open(path, 'w', newline='') as file:
-            # add beutify flag ?
             dump(data, file)
 
         print("[EXPORT]  JSON file has been successfuly exported at: " + path)
