@@ -1,5 +1,6 @@
 import argparse
 import os
+
 from dotenv import load_dotenv
 
 # internal module imports
@@ -12,6 +13,8 @@ from analysis import heuristics as heur
 # export
 import csv
 import sys
+from json import dump
+
 
 SUPPORTED_PACKAGES=['npm', 'pypi', 'maven']
 LEVELS = ['compare', "comp", 'heuristics', "heur"]
@@ -54,6 +57,11 @@ def parse_args():
         dest="CSV",
         help="Export packages properties onto CSV file",
                     action="store", type=str)
+    output_group.add_argument("-j", "--json",
+                              dest="JSON",
+                              help="Export packages properties onto JSON file",
+                              action="store", type=str)
+
     # support variables
     parser.add_argument("-gh", "--github",
                     dest="GITHUB_TOKEN",
@@ -127,9 +135,25 @@ def export_csv(instances, path):
     except:
         print("[ERROR]  CSV file couldn't be written to disk.")
         sys.exit(1)
-        
-        
-    
+
+
+def export_json(instances, path):
+    headers = ["Package Name", "Package Type", "Exists on External",
+               "Org/Group ID", "Score", "Version Count", "Timestamp"]
+    data = [{k: v for k, v in zip(headers, x.listall())} for x in instances]
+    print(len(instances))
+    print(data)
+    try:
+        with open(path, 'w', newline='') as file:
+            # add beutify flag ?
+            dump(data, file)
+
+        print("[EXPORT]  JSON file has been successfuly exported at: " + path)
+    except:
+        print("[ERROR]  JSON file couldn't be written to disk.")
+        sys.exit(1)
+
+
 def main():
     # envs to be consumed: GITHUB_TOKEN
     init_args()
@@ -190,6 +214,9 @@ def main():
     # OUTPUT
     if args.CSV:
         export_csv(metapkg.instances, args.CSV)
+    if args.JSON:
+        export_json(metapkg.instances, args.JSON)
+
 
 if __name__ == "__main__":
     main()
