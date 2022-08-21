@@ -30,19 +30,19 @@ Make sure to install required dependencies by running:
 ## Arguments (--help)
 ```
   -h, --help            show this help message and exit
-  -t {npm,NuGet,maven}, --type {npm,NuGet,maven}
-                        Package Manager Type, i.e: npm, NuGet, maven
+  -t {npm,pypi,maven}, --type {npm,pypi,maven}
+                        Package Manager Type, i.e: npm, PyPI, maven
   -l LIST_FROM_FILE, --load_list LIST_FROM_FILE
                         Load list of dependencies from a file
   -d FROM_SRC, --directory FROM_SRC
                         Extract dependencies from local source repository
   -p--package SINGLE    Name a single package.
   -c CSV, --csv CSV     Export packages properties onto CSV file
+  -j JSON, --json JSON  Export packages properties onto JSON file
   -gh GITHUB_TOKEN, --github GITHUB_TOKEN
                         GitHub Access Token (Overrides .env file setting)
   -a {compare,comp,heuristics,heur}, --analysis {compare,comp,heuristics,heur}
-                        Required analysis level - compare (comp), heuristics
-                        (heur) (default: compare)
+                        Required analysis level - compare (comp), heuristics (heur) (default: compare)
 
 Apiiro <Heart> Community
 ```
@@ -58,6 +58,7 @@ Analysis level is customizable as you can build your own preferred analysis prof
 Supported output format:
 - Screen stdout (default)
 - CSV export to designated file -(-CSV)
+- JSON export to designated file -(-JSON)
 
 ## Usage examples
 
