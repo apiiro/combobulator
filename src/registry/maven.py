@@ -1,3 +1,4 @@
+import os
 import json
 import requests
 import xml.etree.ElementTree as ET
@@ -35,7 +36,7 @@ def recv_pkg_info(pkgs, url=REGISTRY_URL):
 
 def scan_source(dir):
     try:
-        path = dir + "./pom.xml"
+        path = os.path.join(dir, "./pom.xml")
         tree = ET.parse(path)
         pom = tree.getroot()
         ns = ".//{http://maven.apache.org/POM/4.0.0}"
