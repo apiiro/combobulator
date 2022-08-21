@@ -8,6 +8,7 @@ from datetime import datetime as dt
 # deets: https://api-docs.npms.io/#api-Package-GetPackageInfo
 REGISTRY_URL = "https://api.npms.io/v2/package/mget"
 
+
 def get_keys(data):
     result = []
     for key in data.keys():
@@ -59,8 +60,8 @@ def scan_source(dir_):
 
     lister = list(filex['dependencies'].keys())
     if 'devDependencies' in filex:
-        lister.append(filex['devDependencies'].keys())
-        # OPTIONAL - de-comment if you would like to add peer deps.
-        #lister.append(filex['peerDependencies'].keys())
+        lister += list(filex['devDependencies'].keys())
+    # OPTIONAL - de-comment if you would like to add peer deps.
+    # if 'peerDependencies' in filex:
+    #     lister += list(filex['peerDependencies'].keys())
     return lister
-    
