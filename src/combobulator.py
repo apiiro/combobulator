@@ -90,11 +90,11 @@ def load_pkgs_file(pkgs):
         print("[ERR]  Cannot process input list/file")
         raise TypeError
 
-def scan_source(pkgtype, dir):
+def scan_source(pkgtype, directory):
     if pkgtype == "npm":
-        return npm.scan_source(dir)
+        return npm.scan_source(directory)
     elif pkgtype == "maven":
-        return maven.scan_source(dir)
+        return maven.scan_source(directory)
     #TODO: add pypi scanner
     else:
         print("[ERROR]  Selected package type doesn't support import scan.")

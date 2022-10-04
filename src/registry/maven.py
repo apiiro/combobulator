@@ -34,9 +34,9 @@ def recv_pkg_info(pkgs, url=REGISTRY_URL):
             x.exists = False
     return names
 
-def scan_source(dir):
+def scan_source(directory):
     try:
-        path = os.path.join(dir, "./pom.xml")
+        path = os.path.join(directory, "./pom.xml")
         tree = ET.parse(path)
         pom = tree.getroot()
         ns = ".//{http://maven.apache.org/POM/4.0.0}"

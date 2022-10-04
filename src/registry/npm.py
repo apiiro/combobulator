@@ -50,9 +50,9 @@ def recv_pkg_info(pkgs, url=REGISTRY_URL):
             i.exists = False
             
 
-def scan_source(dir_):
+def scan_source(directory):
     try:
-        with open(os.path.join(dir_, "package.json"), "r") as file:
+        with open(os.path.join(directory, "package.json"), "r") as file:
             filex = json.load(file)
     except:
         print("[ERR] Couldn't import from given path.")
