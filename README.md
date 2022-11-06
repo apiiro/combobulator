@@ -14,7 +14,7 @@ The framework can be used by security auditors, pentesters and even baked into a
 * Flexible - decision trees can be determined upon insights or verdicts provided by the toolkit
 
 
-### Easly exstensible
+### Easly extensible
 
 The project is putting practicionar's ability to extend and fit the toolkit to her own specific needs. As such, it is designed to be able to extend it to other sources, public registries, package management schemes and extending the abstract model and accompnaied heuristics engine.
 
