@@ -1,5 +1,5 @@
 # Dependency Combobulator
-![BHEU BADGE](docs/bheu21.svg) ![python](https://img.shields.io/badge/Python-14354C) ![maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
+![BHASIA BADGE](docs/bhasia22.svg) ![BHEU BADGE](docs/bheu21.svg) ![python](https://img.shields.io/badge/Python-14354C) ![maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
 
 Dependency Combobulator is an Open-Source, modular and extensible framework to detect and prevent dependency confusion leakage and potential attacks. This facilitates a holistic approach for ensuring secure application releases that can be evaluated against different sources (e.g., GitHub Packages, JFrog Artifactory) and many package management schemes (e.g., ndm, maven).
 
